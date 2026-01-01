@@ -1,0 +1,23 @@
+{
+	"stdout": {
+		"enabled": true,
+		"level": "trace"
+	},
+	"file": [
+		{
+			"path": "logs/info-{dt:YYYYMMDDHH}.txt",
+			"level": "info"
+		},
+		{
+			"path": "logs/error-{dt:YYYYMMDD}.txt",
+			"level": "error"
+		}
+	],
+	"talog": {
+		"url": "http://127.0.0.1:26382",
+		"app": "test",
+		"index": "json_log",
+		"level": "warn",
+		"max_bulk": 50
+	}
+}

@@ -1,0 +1,65 @@
+POST http://127.0.0.1:26382/index/mapping
+content-type: application/json
+
+{
+    "name": "raw_log",
+    "log_type": "raw",
+    "log_header": "log",
+    "log_regex": "\\[(?P<time>[^\\]]*)\\] \\[(?P<level>[^\\]]*)\\] (?P<msg>.*)",
+    "fields": [
+        {
+            "name": "app",
+            "tag_name": "app",
+            "type": "string"
+        },
+        {
+            "name": "time",
+            "tag_name": "time",
+            "type": "time",
+            "index_format": "YYYYMMDD",
+            "parse_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        {
+            "name": "level",
+            "tag_name": "level",
+            "type": "string"
+        },
+        {
+            "name": "msg",
+            "type": "string"
+        }
+    ]
+}
+
+###
+
+POST http://127.0.0.1:26382/index/mapping
+content-type: application/json
+
+{
+    "name": "json_log",
+    "log_type": "json",
+    "fields": [
+        {
+            "name": "app",
+            "tag_name": "app",
+            "type": "string"
+        },
+        {
+            "name": "time",
+            "tag_name": "time",
+            "type": "time",
+            "index_format": "YYYYMMDD",
+            "parse_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        {
+            "name": "level",
+            "tag_name": "level",
+            "type": "string"
+        },
+        {
+            "name": "msg",
+            "type": "string"
+        }
+    ]
+}
