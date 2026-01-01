@@ -6,7 +6,7 @@ import os
 import regex
 import time
 
-#flag -I.
+#flag -I@VMODROOT
 #flag @VMODROOT/log.c
 #include "log.h"
 
