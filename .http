@@ -63,3 +63,7 @@ content-type: application/json
         }
     ]
 }
+
+###
+
+POST http://127.0.0.1:26382/index/remove?name=json_log

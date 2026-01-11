@@ -5,6 +5,7 @@ import sync
 import time
 import x.json2
 
+@[heap]
 pub struct HttpSink {
 	ev_chan chan LogEvent
 pub:

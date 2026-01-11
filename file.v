@@ -10,7 +10,7 @@ pub fn add_file(path string, level LogLevel) {
 		l1 := int(lvl.value)
 		l2 := int(level)
 		if l1 >= l2 {
-			files[l1] = path
+			file_map[l1] = path
 		}
 	}
 }
@@ -18,7 +18,7 @@ pub fn add_file(path string, level LogLevel) {
 fn log_to_file (ev &LogEvent) {
 	level := unsafe{LogLevel(ev.level)}
 	t := convert_time(ev.time)
-	mut f := files[ev.level] or {return}
+	mut f := file_map[ev.level] or {return}
 	s, _ := dt_re.match_string(f)
 	if s >= 0 {
 		dt := dt_re.get_group_by_name(f, "dt")

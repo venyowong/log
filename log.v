@@ -6,13 +6,13 @@ import os
 import regex
 import time
 
-#flag -I.
+#flag -I@VMODROOT
 #flag @VMODROOT/log.c
 #include "log.h"
 
 __global (
 	dt_re regex.RE
-	files map[int]string
+	file_map map[int]string
 	http_sinks []HttpSink
 )
 
